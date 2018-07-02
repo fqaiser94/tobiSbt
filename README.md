@@ -1,0 +1,3 @@
+# tobiSbt
+
+`sbt package`
