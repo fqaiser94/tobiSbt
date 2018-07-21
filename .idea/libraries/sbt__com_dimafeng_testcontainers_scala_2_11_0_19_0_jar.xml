@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.dimafeng:testcontainers-scala_2.11:0.19.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.dimafeng/testcontainers-scala_2.11/jars/testcontainers-scala_2.11-0.19.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.dimafeng/testcontainers-scala_2.11/srcs/testcontainers-scala_2.11-0.19.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
