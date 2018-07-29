@@ -18,6 +18,10 @@ libraryDependencies += "org.postgresql" % "postgresql" % "42.2.4"
 libraryDependencies += "com.dimafeng" %% "testcontainers-scala" % "0.19.0" % Test
 libraryDependencies += "org.testcontainers" % "postgresql" % "1.8.1"
 
+libraryDependencies += "com.typesafe.slick" %% "slick" % "3.2.3"
+libraryDependencies += "org.slf4j" % "slf4j-nop" % "1.6.4"
+libraryDependencies += "com.typesafe.slick" %% "slick-hikaricp" % "3.2.3"
+
 
 
 
