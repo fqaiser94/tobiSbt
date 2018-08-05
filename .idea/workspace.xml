@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdb24060-3d52-490a-891d-e97c2aa2908a" name="Default" comment="pulling empty table from postGres using testContainers and FlatSpec">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_postgresql_postgresql_42_2_4_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/spark.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/spark.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/spark$sources/0.1/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/spark$sources/0.1/resolved.xml.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/spark$sources/0.1/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/spark$sources/0.1/resolved.xml.xml" afterDir="false" />
@@ -79,8 +74,8 @@
       <file leaf-file-name="readFromPostgresTest.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+            <state relative-caret-position="270">
+              <caret line="75" column="97" lean-forward="true" selection-end-line="105" selection-end-column="3" />
               <folding>
                 <element signature="e#29#58#0" expanded="true" />
               </folding>
@@ -464,16 +459,17 @@
       <option name="project" value="LOCAL" />
       <updated>1532264711707</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="pulling a table with data from postgres">
+      <created>1532874135767</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1532874135767</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PostgresqlSpec_PostgreSQL_container_be_started - 2018.07.22 at 16h 01m 10s.xml">
-      <configuration name="PostgresqlSpec.PostgreSQL container be started" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="PostgresqlSpec_PostgreSQL_container_be_started - 2018.07.22 at 16h 18m 58s.xml">
-      <configuration name="PostgresqlSpec.PostgreSQL container be started" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="PostgresqlSpec_PostgreSQL_container_be_started - 2018.07.22 at 16h 19m 27s.xml">
       <configuration name="PostgresqlSpec.PostgreSQL container be started" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
@@ -496,6 +492,12 @@
       <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
     <history-entry file="readFromPostgresTest - 2018.07.29 at 10h 20m 22s.xml">
+      <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="readFromPostgresTest - 2018.07.29 at 10h 20m 51s.xml">
+      <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="readFromPostgresTest - 2018.07.29 at 10h 23m 18s.xml">
       <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
@@ -572,7 +574,8 @@
     <MESSAGE value="basic sbt project" />
     <MESSAGE value="trying to get containers working in tests" />
     <MESSAGE value="pulling empty table from postGres using testContainers and FlatSpec" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulling empty table from postGres using testContainers and FlatSpec" />
+    <MESSAGE value="pulling a table with data from postgres" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulling a table with data from postgres" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.sbt">
@@ -748,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        <state relative-caret-position="270">
+          <caret line="75" column="97" lean-forward="true" selection-end-line="105" selection-end-column="3" />
           <folding>
             <element signature="e#29#58#0" expanded="true" />
           </folding>
