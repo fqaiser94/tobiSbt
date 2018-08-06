@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdb24060-3d52-490a-891d-e97c2aa2908a" name="Default" comment="pulling empty table from postGres using testContainers and FlatSpec">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/spark/schema/merakiDb/CoffeesSchema.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/spark/schema/merakiDb/CoffeesTable.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/scala/com/spark/transform/PostgresTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/config-classes/$33150b786c702ed5c3ab$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$33150b786c702ed5c3ab$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/config-classes/$7dcce22161cb8d479895$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$7dcce22161cb8d479895$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/config-classes/$8a3e9c69763e57d73a3d$.class" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/config-classes/$8a3e9c69763e57d73a3d$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/spark/transform/readFromPostgres.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/spark/transform/readFromPostgres.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/com/spark/transform/SparkTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/com/spark/transform/SparkTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/spark/transform/readFromPostgres$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/spark/transform/readFromPostgres$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/com/spark/transform/readFromPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/com/spark/transform/readFromPostgres.class" afterDir="false" />
@@ -86,38 +79,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readFromPostgres.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="readFromPostgres.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/spark/transform/readFromPostgres.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="35" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="35" />
               <folding>
                 <element signature="e#29#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readFromPostgresTest.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-              <folding>
-                <element signature="e#29#91#0" expanded="true" />
-                <element signature="e#1253#1292#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostgresTest.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/com/spark/transform/PostgresTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding>
-                <element signature="e#30#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -518,13 +486,17 @@
       <option name="project" value="LOCAL" />
       <updated>1533517774792</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="re-usability stuff; PostgresTest, schemas, tables, genProps">
+      <created>1533570994701</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1533570994701</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="readFromPostgresTest - 2018.08.06 at 11h 08m 54s.xml">
-      <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="readFromPostgresTest - 2018.08.06 at 11h 17m 21s.xml">
       <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
@@ -550,6 +522,9 @@
       <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
     <history-entry file="readFromPostgresTest - 2018.08.06 at 11h 53m 02s.xml">
+      <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="readFromPostgresTest - 2018.08.06 at 11h 53m 33s.xml">
       <configuration name="readFromPostgresTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
@@ -629,7 +604,8 @@
     <MESSAGE value="pulling a table with data from postgres" />
     <MESSAGE value="add workspace.xml" />
     <MESSAGE value="added Slick example" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Slick example" />
+    <MESSAGE value="re-usability stuff; PostgresTest, schemas, tables, genProps" />
+    <option name="LAST_COMMIT_MESSAGE" value="re-usability stuff; PostgresTest, schemas, tables, genProps" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.sbt">
@@ -827,16 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/spark/transform/readFromPostgres.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="35" />
-          <folding>
-            <element signature="e#29#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/spark/schema/merakiDb/CoffeesSchema.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -890,11 +856,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/com/spark/transform/readFromPostgresTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#29#91#0" expanded="true" />
             <element signature="e#1253#1292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/spark/transform/readFromPostgres.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="e#29#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
