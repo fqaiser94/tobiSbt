@@ -63,7 +63,7 @@ class readFromPostgresTest extends SparkTest with PostgresTest {
     val actions = DBIO.seq(
         coffees.schema.create,
         coffees ++= rowsToInsert
-    )
+    ).transactionally
 
     Await.result(
       db.run(actions),
