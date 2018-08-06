@@ -1,25 +1,12 @@
 package com.spark.transform
 
-import java.sql.DriverManager
 import java.util.Properties
 
-import com.spark.transform.readFromPostgres._
 import com.dimafeng.testcontainers.{ForAllTestContainer, PostgreSQLContainer}
+import com.spark.transform.readFromPostgres._
 import org.scalatest._
 
-//import slick.jdbc.H2Profile.api._
-//import scala.concurrent.ExecutionContext.Implicits.global
-//
-//import slick.dbio.Effect.{Read, Schema, Write}
-//
-//import scala.concurrent._
-//import scala.concurrent.duration._
-//import slick.jdbc.PostgresProfile.api._
-//import slick.lifted.{ProvenShape, TableQuery}
-//import slick.sql.{FixedSqlAction, FixedSqlStreamingAction}
-
-
-case class Coffee(name: String, price: Double)
+case class Coffees(coffeeName: String, price: Double)
 
 class readFromPostgresTest extends FunSuite with SparkSessionTestWrapper with Matchers with ForAllTestContainer {
 
@@ -27,7 +14,10 @@ class readFromPostgresTest extends FunSuite with SparkSessionTestWrapper with Ma
 
   override val container = PostgreSQLContainer()
 
-  test("PostgreSQL container be started") {
+  test("using java sql driver manager") {
+
+    import java.sql.DriverManager
+
     val jdbcUrl = container.jdbcUrl
     val user = container.username
     val password = container.password
@@ -56,51 +46,65 @@ class readFromPostgresTest extends FunSuite with SparkSessionTestWrapper with Ma
     result.collect should contain theSameElementsAs expected.collect
   }
 
-//  test("using Slick API") {
-//    val insertActions = DBIO.seq(
-//      coffees += ("Colombian", 101, 7.99, 0, 0),
-//
-//      coffees ++= Seq(
-//        ("French_Roast", 49, 8.99, 0, 0),
-//        ("Espresso", 150, 9.99, 0, 0)
-//      ),
-//
-//      // "sales" and "total" will use the default value 0:
-//      coffees.map(c => (c.name, c.supID, c.price)) += ("Colombian_Decaf", 101, 8.99)
-//    )
-//
-//    // Get the statement without having to specify a value to insert:
-//    val sql = coffees.insertStatement
-//
-//    // compiles to SQL:
-//    //   INSERT INTO "COFFEES" ("COF_NAME","SUP_ID","PRICE","SALES","TOTAL") VALUES (?,?,?,?,?)
-//
-//  }
+  test("using Slick") {
+
+    import slick.jdbc.PostgresProfile.api._
+    import slick.lifted.Tag
+
+    import scala.concurrent._
+    import scala.concurrent.duration._
+
+    class CoffeesTable(tag: Tag) extends Table[Coffees](tag, "coffees") {
+      def coffeeName = column[String]("coffeeName")
+      def price = column[Double]("price")
+      def * = (coffeeName, price).mapTo[Coffees]
+    }
+
+    val coffees = TableQuery[CoffeesTable]
+
+    val jdbcUrl = container.jdbcUrl
+    val user = container.username
+    val password = container.password
+
+    val db = Database.forURL(jdbcUrl, user, password)
+
+    val rowsToInsert = Seq(
+      Coffees("Colombian", 7.99),
+      Coffees("French_Roast", 8.99),
+      Coffees("Espresso", 9.99)
+    )
+
+    val actions = {
+      coffees.schema.create >>
+      (coffees ++= rowsToInsert)
+    }
+
+    Await.result(
+      db.run(actions),
+      Duration.Inf
+    )
+
+    Class.forName("org.postgresql.Driver")
+
+    val props = new Properties()
+    props.put("user", user)
+    props.put("password", password)
+    props.put("driver", "org.postgresql.Driver")
+
+    val result = transform(spark, jdbcUrl, "COFFEES", props)
+    val expected = rowsToInsert.toDF
+
+    result.collect should contain theSameElementsAs expected.collect
+  }
+
+  //  test("run random sql queries") {
+  //    val jdbcUrl = container.jdbcUrl
+  //    val user = container.username
+  //    val password = container.password
+  //
+  //    val db = Database.forURL(jdbcUrl, user, password)
+  //
+  //    // doesn't work
+  //    db.run(sqlu"ALTER TABLE public.COFFEES OWNER TO postgres")
+  //  }
 }
-
-
-//object Example01 extends App {
-//
-//  case class Album(artist: String, title: String, year: Int, id: Long = 0)
-//
-//  // A standard Slick table type representing an SQL table type to store instances
-//  // of type Album.
-//  class AlbumTable(tag: Tag) extends Table[Album](tag, "albums") {
-//
-//    // definitions of each of the columns
-//    def artist: Rep[String] = column[String]("artist")
-//    def title: Rep[String] = column[String]("title")
-//    def year: Rep[Int] = column[Int]("year")
-//
-//    // the 'id' column has a couple of extra 'flags' to say
-//    // 'make this a primary key' and 'make this an auto incrementing primary key'
-//    def id: Rep[Long] = column[Long]("id", O.PrimaryKey, O.AutoInc)
-//
-//    // this is the default projection for the table. It tells us how to convert between a
-//    // tuple of these columns of the database and the Album datatype that we want to map
-//    // using this table.
-//    def * : ProvenShape[Album] = (artist, title, year, id) <> (Album.tupled, Album.unapply)
-//  }
-//
-//  lazy val AlbumTable = TableQuery[AlbumTable]
-//}
