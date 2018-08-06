@@ -60,10 +60,10 @@ class readFromPostgresTest extends SparkTest with PostgresTest {
       CoffeesSchema("Espresso", 9.99)
     )
 
-    val actions = {
-      coffees.schema.create >>
-        (coffees ++= rowsToInsert)
-    }
+    val actions = DBIO.seq(
+        coffees.schema.create,
+        coffees ++= rowsToInsert
+    )
 
     Await.result(
       db.run(actions),
