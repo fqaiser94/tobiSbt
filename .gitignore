@@ -1,2 +1,11 @@
 target/
+
 .Rhistory
+
+*.class
+
+*.iml
+*.ipr
+*.iws
+.idea
+out
